@@ -16,6 +16,7 @@ export const main = handler(async (event, context) => {
     };
 
     const result = await dynamoDb.query(params);
+    result.Items.push({ content: 'Hola' });
 
     // Return the matching list of items in response body
     return result.Items;
